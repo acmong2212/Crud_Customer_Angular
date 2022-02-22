@@ -1,0 +1,131 @@
+<div class="row flex-lg-nowrap">
+  <div class="col mb-3">
+    <div class="e-panel card">
+      <div class="card-body">
+        <div class="card-title">
+          <h6 class="mr-2"><span id="davidLg">David Duc Thang</span><small class="px-1"
+                                                                           id="studentOfClassC0921K1Lg">Student of
+            class C0921K1</small></h6>
+        </div>
+        <div class="e-table">
+          <div class="table-responsive table-lg mt-3">
+            <table class="table table-bordered">
+              <thead>
+              <tr>
+                <th class="align-top" id="idLg">#</th>
+                <th class="max-width" id="nameLg">Name</th>
+                <th class="sortable" id="imageLg">Image</th>
+                <th id="ActionsLg">Actions</th>
+              </tr>
+              </thead>
+              <tbody id="tbody">
+              <tr *ngFor="let c of customerList">
+                <td>{{c.id}}</td>
+                <td>{{c.name}}</td>
+                <td><img src="{{c.image}}" width="250" height="250"/></td>
+                <td><a (click)="showEdit(c)" data-toggle="modal" data-target="#exampleModalEdit"
+                       class="btn btn-sm btn-outline-secondary badge" id="editLg">Edit</a>
+                  <button (click)="delete(c.id)" class="btn btn-sm btn-outline-secondary badge"
+                          type="button" data-toggle="modal" data-target="#exampleModal1"><i class="fa fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-lg-3 mb-3">
+    <div class="card">
+      <div class="card-body">
+        <button type="button" class="btn btn-success btn-block" data-toggle="modal" data-target="#exampleModal">
+          New Customer
+        </button>
+        <hr class="my-3">
+        <div>
+          <div class="form-group">
+            <label id="searchByNameLg">Search by Name:</label>
+            <div><input id="search-input" class="form-control w-100" type="search" placeholder="Name">
+              <button id="search-button" class="btn btn-outline-primary">Search</button>
+            </div>
+          </div>
+        </div>
+        <hr class="my-3">
+      </div>
+    </div>
+  </div>
+</div>
+<!-- User Form Modal -->
+
+<!--Logic-->
+<!-- Modal Create -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Create Customer</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <label>Id:</label>
+        <div class="input-group mb-3">
+          <input [(ngModel)]="customer.id" class="form-control" placeholder="Enter a id" id="id" name="id">
+        </div>
+        <label>Name:</label>
+        <div class="input-group mb-3">
+          <input [(ngModel)]="customer.name" class="form-control" placeholder="Enter a Name" id="name" name="name">
+        </div>
+        <label>Image:</label>
+        <div class="input-group mb-3">
+          <input [(ngModel)]="customer.image" class="form-control" placeholder="Enter a Image" id="image" name="email">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button (click)="create()" type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--// End Modal Create -->
+
+<!-- Modal Edit -->
+<div class="modal fade" id="exampleModalEdit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelEdit"
+     aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabelEdit">Edit Customer</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <label>Id:</label>
+        <div class="input-group mb-3">
+          <input [(ngModel)]="customer.id" class="form-control" placeholder="Enter a id" name="id" readonly>
+        </div>
+        <label>Name:</label>
+        <div class="input-group mb-3">
+          <input [(ngModel)]="customer.name" class="form-control" placeholder="Enter a Name" name="name">
+        </div>
+        <label>Image:</label>
+        <div class="input-group mb-3">
+          <input [(ngModel)]="customer.image" class="form-control" placeholder="Enter a Image" name="email">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button (click)="create()" type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--// End Modal Edit -->
+
+
