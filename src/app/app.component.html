@@ -1,113 +1,11 @@
 <div class="container">
-  <label>Id:</label>
-  <div class="input-group mb-3">
-    <input [(ngModel)]="customer.id" class="form-control" placeholder="Enter a id" id="id" name="id">
-  </div>
-  <label>Name:</label>
-  <div class="input-group mb-3">
-    <input [(ngModel)]="customer.name" class="form-control" placeholder="Enter a Name" id="name" name="name">
-  </div>
-  <label>Image:</label>
-  <div class="input-group mb-3">
-    <input [(ngModel)]="customer.image" class="form-control" placeholder="Enter a Image" id="image" name="email">
-    <div class="input-group-append">
-      <button (click)="create()" class="input-group-text">Create</button>
-    </div>
-  </div>
   <div class="row flex-lg-nowrap">
     <div class="col">
       <div class="e-tabs mb-3 px-3">
-        <ul class="nav nav-tabs">
-          <li class="nav-item"><a class="nav-link active" href="index.html" id="customerLg">Customer</a></li>
-          <li class="dropdown">
-            <button class="nav-link active dropdown-toggle" type="button" id="language" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
-              Language
-            </button>
-            <div class="dropdown-menu" aria-labelledby="language">
-              <a id="english" class="dropdown-item" href="#">English</a>
-              <a id="vietnamese" class="dropdown-item" href="#">VietNamese</a>
-            </div>
-          </li>
-        </ul>
+        <app-header></app-header>
+        <app-customer></app-customer>
+        <app-footer></app-footer>
       </div>
-
-      <div class="row flex-lg-nowrap">
-        <div class="col mb-3">
-          <div class="e-panel card">
-            <div class="card-body">
-              <div class="card-title">
-                <h6 class="mr-2"><span id="davidLg">David Duc Thang</span><small class="px-1"
-                                                                                 id="studentOfClassC0921K1Lg">Student of
-                  class C0921K1</small></h6>
-              </div>
-              <div class="e-table">
-                <div class="table-responsive table-lg mt-3">
-                  <table class="table table-bordered">
-                    <thead>
-                    <tr>
-                      <th class="align-top" id="idLg">#</th>
-                      <th class="max-width" id="nameLg">Name</th>
-                      <th class="sortable" id="imageLg">Image</th>
-                      <th id="ActionsLg">Actions</th>
-                    </tr>
-                    </thead>
-                    <tbody id="tbody">
-                    <tr *ngFor="let c of customerList">
-                      <td>{{c.id}}</td>
-                      <td>{{c.name}}</td>
-                      <td><img src="{{c.image}}" width="250" height="250"/></td>
-                      <td><a (click)="showEdit(c)" class="btn btn-sm btn-outline-secondary badge" id="editLg">Edit</a>
-                        <button (click)="delete(c.id)" class="btn btn-sm btn-outline-secondary badge"
-                                type="button" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-trash"></i></button>
-                      </td>
-                    </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-lg-3 mb-3">
-          <div class="card">
-            <div class="card-body">
-              <div class="text-center px-xl-3">
-                <a href="#" class="btn btn-success btn-block" id="newCustomerLg">New Customer
-                </a>
-              </div>
-              <hr class="my-3">
-              <div>
-                <div class="form-group">
-                  <label id="searchByNameLg">Search by Name:</label>
-                  <div><input id="search-input" class="form-control w-100" type="search" placeholder="Name">
-                    <button id="search-button" class="btn btn-outline-primary">Search</button>
-                  </div>
-                </div>
-              </div>
-              <hr class="my-3">
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- User Form Modal -->
     </div>
   </div>
-  <!-- Modal Delete -->
-<!--  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"-->
-<!--       aria-hidden="true">-->
-<!--    <div class="modal-dialog" role="document">-->
-<!--      <div class="modal-content">-->
-<!--        <div class="modal-body">-->
-<!--&lt;!&ndash;          <input id="id" hidden/>&ndash;&gt;-->
-<!--          <p id="sureDeleteLg">Are you sure you want to delete ?</p> <input class="border-0" id="nameDelete"/>-->
-<!--        </div>-->
-<!--        <div class="modal-footer">-->
-<!--          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
-<!--          <button type="button" class="btn btn-primary">Delete</button>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
 </div>
-
